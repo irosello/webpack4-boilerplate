@@ -1,0 +1,72 @@
+doctype html
+html(lang="eng")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title <%= htmlWebpackPlugin.options.title %>
+    body
+        <!-- Navigation -->
+        nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.shadow.fixed-top
+            .container
+                a.navbar-brand(href="#") Webpack 4 Boilerplate with Pug
+                button.navbar-toggler(type="button", data-toggle="collapse")
+                    span.navbar-toggler-icon(data-toggle="collapse", data-target="#navbarResponsive")
+                .collapse.navbar-collapse#navbarResponsive
+                    ul.navbar-nav.ml-auto
+                        li.nav-item
+                            a.nav-link(href="https://github.com/LeandroDCI/webpack4-boilerplate")
+                                i.fab.fa-github 
+                                | &nbsp;Code
+                        li.nav-item.active
+                            a.nav-link(href="https://leandrodci.github.io/webpack4-boilerplate/")
+                                i.fas.fa-laptop 
+                                | &nbsp;Demo
+        
+        header.masthead
+            .container.h-100
+                .row.h-100.align-items-center
+                    .col-12.text-center
+                        h1.font-weight-light Create Beautiful Things
+                        p.lead
+                            img#logo.img-fluid(src="", alt="")
+                        p.techs
+                            span
+                                i.fab.fa-html5 
+                                | &nbsp;HTML5
+                            span
+                                i.fab.fa-sass 
+                                | &nbsp;SASS
+                            span
+                                i.fab.fa-css3-alt 
+                                | &nbsp;CSS
+                            span
+                                i.fab.fa-js-square 
+                                | &nbsp;ES6
+                            span
+                                i.fas.fa-fire 
+                                | &nbsp;Babel
+                            span
+                                i.fas.fa-bold 
+                                | &nbsp;Bootstrap
+                            span
+                                i.fab.fa-font-awesome 
+                                | &nbsp;Font-Awesome
+                            span
+                                i.fas.fa-globe 
+                                | &nbsp;BrowserSync
+                            span
+                                i.fab.fa-google 
+                                | &nbsp;Google Fonts
+                        p
+                            a(href="https://github.com/LeandroDCI/webpack4-boilerplate")
+                                button.btn.btn-dark(type="button")
+                                    i.fab.fa-github 
+                                    | &nbsp;Project on Github
+                            a(href="https://github.com/LeandroDCI/webpack4-boilerplate/archive/master.zip")
+                                button.btn.btn-primary(type="button")
+                                    i.fas.fa-download 
+                                    | &nbsp;Download
+                        p
+                            img(src="https://img.shields.io/badge/Build%20in-Berlin-red.svg?logo=webpack")
+                            img(src="https://david-dm.org/leandroDCI/webpack4-boilerplate/dev-status.svg")

@@ -19,6 +19,14 @@ module.exports = {
   },
   module: {
     rules: [
+      //pug
+      {
+        test: /\.pug$/,
+        use: [
+          {loader: 'html-loader', options: {attrs:false}}, 
+          {loader: 'pug-html-loader', options: {pretty:true}}
+        ]
+      },
       //babel
       {
         test: /\.js$/,
@@ -84,8 +92,9 @@ module.exports = {
       filename: "assets/css/styles.css"
     }),
     new HtmlWebpackPlugin({
-      title: "Setting up webpack 4",
-      template: "src/index.html",
+      title: "Setting up webpack 4 with Pug",
+      filename: 'index.html',
+      template: "src/index.pug",
       inject: true,
       minify: {
         removeComments: true,
@@ -95,7 +104,7 @@ module.exports = {
     new BrowserSyncPlugin({
       host: 'localhost',
       port: 3000,
-      server: { baseDir: ['dist'] }
+      server: { baseDir: ['dist'], direcory: true }
     })
   ],
   performance: {
