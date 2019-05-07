@@ -1,5 +1,5 @@
 import "@scss/styles.scss";
-import logoImg from "@img/logo.png";
+//import logoImg from "assets/images/logo.png";
 
 
 window.addEventListener('click', (ev) => {
@@ -17,8 +17,8 @@ const collapse = (selector, cmd) => {
     document.querySelector(selector).classList[fnmap[cmd]]('show');
 }
 
-let filename = logoImg.substring(logoImg.lastIndexOf('/') + 1);
-logo.src = `assets/img/${filename}`;
+//let filename = logoImg.substring(logoImg.lastIndexOf('/') + 1);
+//logo.src = `assets/images/${filename}`;
 
 let message = "Hello Webpack";
 console.log(` Message is: ${message}`);

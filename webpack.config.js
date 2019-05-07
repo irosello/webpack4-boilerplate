@@ -7,11 +7,11 @@ const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 
 
 module.exports = {
-  entry: "./src/assets/js/index.js",
+  entry: "./src/app.js",
   output: {
     path: path.resolve(__dirname, "dist/"),
-    filename: "assets/js/bundle.js",
-    publicPath: ""
+    filename: '[name].bundle.js',
+    //publicPath: ""
   },
   devtool: 'source-map',
   optimization: {
@@ -56,8 +56,8 @@ module.exports = {
             loader: "file-loader",
             options: {
               name: "[name].[ext]",
-              outputPath: "assets/img/",
-              publicPath: '../img/'
+              outputPath: "assets/images/",
+              publicPath: '../assets/images/'
             }
           }
         ]
@@ -70,7 +70,7 @@ module.exports = {
           options: {
             name: '[name].[ext]',
             outputPath: 'assets/fonts/',
-            publicPath: '../fonts'
+            publicPath: '../assets/fonts'
           }
         }]
       }
@@ -78,8 +78,8 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '@scss': path.resolve(__dirname, 'src/assets/scss'),
-      '@img': path.resolve(__dirname, 'src/assets/img'),
+      '@scss': path.resolve(__dirname, 'src/scss'),
+      //'@images': path.resolve(__dirname, 'src/assets/images'),
       '@': path.resolve(__dirname, 'src')
     },
     modules: [
@@ -89,12 +89,12 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "assets/css/styles.css"
+      filename: "scss/[name].css",
     }),
     new HtmlWebpackPlugin({
       title: "Setting up webpack 4 with Pug",
-      filename: 'index.html',
-      template: "src/index.pug",
+      filename: 'app/modules/providers/index.html',
+      template: "src/app/modules/providers/index.pug",
       inject: true,
       minify: {
         removeComments: true,
